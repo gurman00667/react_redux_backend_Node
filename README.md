@@ -20,14 +20,15 @@ There is a term for free first, after the term has finished we will charge the f
 
 
 -------------------This is Spec-------------------
-* Profile of Investors <=== maybe no needed>
+* Profile of Investors
 * Profile of the users //company
 * Post Content
 * Investors can search users
 * filter by category
 * filter by region
-* Log in page
+* Log in page 
 * Sign up page
+* Use Bcript and extra library for ID for users security.
 * Setting Profile Page
 * Categories ['Properties', 'Finance', 'FinTech', 'Food', 'Others']
 * Upload Picture
@@ -38,6 +39,10 @@ There is a term for free first, after the term has finished we will charge the f
 * Other Languages pages (Not Important)
 * Chatroom indivisualy
 * API for chart of industry growth (I like it)
+* New post comes up
+* Timelimit for the post
+* Advertisement in our website for making money and donations
+* We'll put all of the stuff to Domain remote server, so We don't use local envirment for this project.
 -----------------This is WireFrame----------------
 
 
@@ -45,3 +50,11 @@ There is a term for free first, after the term has finished we will charge the f
 * Table of User //We can add a column of 'Investors' boolean
 * Table of Investors
 * Table of Category
+
+
+-------------This is a Note for Jihyup------------
+* Anyone can see the post, but if you're not logged in, the user can't do any action.
+* Entrepreneurs needs to creat thier Profile when they're sign up so they can post.
+* When a investor sign up, make them to choose what category they do like, they don't need to finish their profile(portfolio) to search or browse Entrepreneurs
+* User's profile page has Overview, Details, Thier company information, Summury, Highlights, The button to chat to them. Also has a background picture they can upload anytime, left-bottom of background picture has icon picture, righside of that has name and bottom of the name has location. Aloso their is a favourites button, if they click the button its like a like button, it goes to a user's favourites list.
+* Investor's page has Also has a background picture they can upload anytime, left-bottom of background picture has icon picture, righside of that has name and bottom of the name has location. Aloso their is a favourites button, if they click the button its like a like button, it goes to a user's favourites list. And About himself(herself), Expertise, Criteria and rightside of all of these has Profile, it contains minimum maximum amount of investment, Registration Date etc.
