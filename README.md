@@ -20,12 +20,12 @@ We want to provide our service as free in the beginning, If any user want to don
 -------------------This is Spec-------------------
 **Core functions sorted by importance level**
 * Landing Page
-* Log in page 
+* Log in page
 * Sign up page
 * Get started Page
 * Profile of Investors
 * Post Content + Profile of the users //company <---it contains in post
-* Upload Picture
+* Upload Picture AWS S3
 * Investors can search users
 * Entrepreneurs can search Investors
 * filter by category
