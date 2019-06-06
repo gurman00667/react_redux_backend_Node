@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Add this line
+import Navbar1 from './components/Navbar'
 
 function App() {
   return (
     <div className="App">
+      <Navbar1 image = {logo}/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
