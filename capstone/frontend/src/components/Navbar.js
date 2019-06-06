@@ -12,7 +12,7 @@ export default class Navbar1 extends React.Component {
         this.toggleColl2 = this.toggleColl2.bind(this);
         this.state = {
             isOpen: false,
-            isLoggedIn: true,
+            isLoggedIn: false,
             isDown: false,
             isDown2: false,
             isColl: false,
@@ -71,7 +71,7 @@ export default class Navbar1 extends React.Component {
             <NavLink href="#" style={this.state.isOpen ? Inline : NavMenuLast}>Profile</NavLink>
          </NavItem>) :
          (<NavItem >
-            <NavLink href="#" style={this.state.isOpen ? Inline : NavMenuLast}>Sign up</NavLink>
+            <NavLink href="#" style={this.state.isOpen ? Inline : NavMenuLast}>SignUp</NavLink>
           </NavItem>)
           )
     }
