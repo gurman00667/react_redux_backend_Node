@@ -7,6 +7,8 @@ export default class Navbar1 extends React.Component {
 
         this.toggleDown2 = this.toggleDown2.bind(this);
         this.toggleDown = this.toggleDown.bind(this);
+        this.onMouseEnter = this.onMouseEnter.bind(this);
+        this.onMouseLeave = this.onMouseLeave.bind(this);
         this.toggle = this.toggle.bind(this);
         this.toggleColl = this.toggleColl.bind(this);
         this.toggleColl2 = this.toggleColl2.bind(this);
@@ -25,6 +27,14 @@ export default class Navbar1 extends React.Component {
             isOpen: !this.state.isOpen
         });
     }
+
+    onMouseEnter() {
+        this.setState({isDown: !this.state.isDown});
+      }
+    
+    onMouseLeave() {
+        this.setState({isDown: !this.state.isDown});
+      }
 
     toggleDown() {
         this.setState({
@@ -55,10 +65,10 @@ export default class Navbar1 extends React.Component {
         return(
         isLoggedIn ? (
          <NavItem>
-            <NavLink href="#" style={this.state.isOpen ? Inline : NavMenu}>Logout</NavLink>
+            <NavLink href="/logout" style={this.state.isOpen ? Inline : NavMenu}>Logout</NavLink>
          </NavItem>) :
          (<NavItem >
-            <NavLink href="#" style={this.state.isOpen ? Inline : NavMenu}>Login</NavLink>
+            <NavLink href="/login" style={this.state.isOpen ? Inline : NavMenu}>Login</NavLink>
           </NavItem>)
           )
     }
@@ -71,7 +81,7 @@ export default class Navbar1 extends React.Component {
             <NavLink href="#" style={this.state.isOpen ? Inline : NavMenuLast}>Profile</NavLink>
          </NavItem>) :
          (<NavItem >
-            <NavLink href="#" style={this.state.isOpen ? Inline : NavMenuLast}>SignUp</NavLink>
+            <NavLink href="signup" style={this.state.isOpen ? Inline : NavMenuLast}>Signup</NavLink>
           </NavItem>)
           )
     }
@@ -148,11 +158,11 @@ export default class Navbar1 extends React.Component {
                     <Dropdown isOpen={this.state.isDown}>
                       <DropdownToggle
                       tag="span"
-                      onClick={this.toggleDown}
+                    //   onClick={this.toggleDown}
                       data-toggle="dropdown"
                       aria-expanded={this.state.dropdownOpen}
                       >
-                        <NavLink  href="#" onClick={this.toggleDown} style={this.state.isOpen ? null : NavMenu}>Entrepreneurs</NavLink>
+                        <NavLink  href="#" onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave} style={this.state.isOpen ? null : NavMenu}>Entrepreneurs</NavLink>
                       </DropdownToggle>
                           <DropdownMenu right>
                               <DropdownItem style={TextStyle}>Get Started</DropdownItem>

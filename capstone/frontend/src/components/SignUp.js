@@ -38,7 +38,7 @@ export default class SignUp extends React.Component {
     <label className="checkbox-inline"><input type="checkbox" required="required" /> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
   </div>
   <div className="form-group">
-    <button type="submit" className="btn btn-success btn-block login-btn">Sign Up</button>
+    <button type="submit" className="btn btn-success btn-block login-btn">Sign up</button>
   </div>
   <div className="or-seperator">
               <i>or</i>
