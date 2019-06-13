@@ -1,0 +1,32 @@
+#summary:hover {
+    background-color: bisque;
+}
+#product:hover {
+    background-color: bisque;
+}
+#toinvestor:hover {
+    background-color: bisque;
+}
+#advantage:hover {
+    background-color: bisque;
+}
+#motivation:hover {
+    background-color: bisque;
+}
+#contact:hover {
+    background-color: bisque;
+}
+#feature:hover {
+    background-color: bisque;
+}
+#about:hover {
+    background-color: bisque;
+}
+#message:hover {
+    background-color: bisque;
+}
+#sidebars{
+    position: -webkit-sticky ;
+    position: sticky;
+    top: 0%
+}
