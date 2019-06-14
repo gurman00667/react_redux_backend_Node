@@ -1,20 +1,24 @@
 import React from 'react';
-import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownItem, DropdownMenu, Collapse, Container} from 'reactstrap';
+import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Dropdown, DropdownToggle, DropdownItem, DropdownMenu, Collapse, Container, UncontrolledDropdown} from 'reactstrap';
+import { logOut } from '../redux/auth/actions'
+import { connect } from 'react-redux';
+import { withRouter} from 'react-router-dom';
 
-export default class Navbar1 extends React.Component {
+
+
+export class Navbar1 extends React.Component {
     constructor(props){
         super(props);
 
         this.toggleDown2 = this.toggleDown2.bind(this);
         this.toggleDown = this.toggleDown.bind(this);
-        this.onMouseEnter = this.onMouseEnter.bind(this);
-        this.onMouseLeave = this.onMouseLeave.bind(this);
+        // this.onMouseEnter = this.onMouseEnter.bind(this);
+        // this.onMouseLeave = this.onMouseLeave.bind(this);
         this.toggle = this.toggle.bind(this);
         this.toggleColl = this.toggleColl.bind(this);
         this.toggleColl2 = this.toggleColl2.bind(this);
         this.state = {
             isOpen: false,
-            isLoggedIn: false,
             isDown: false,
             isDown2: false,
             isColl: false,
@@ -28,13 +32,13 @@ export default class Navbar1 extends React.Component {
         });
     }
 
-    onMouseEnter() {
-        this.setState({isDown: !this.state.isDown});
-      }
+    // onMouseEnter() {
+    //     this.setState({isDown: !this.state.isDown});
+    //   }
     
-    onMouseLeave() {
-        this.setState({isDown: !this.state.isDown});
-      }
+    // onMouseLeave() {
+    //     this.setState({isDown: !this.state.isDown});
+    //   }
 
     toggleDown() {
         this.setState({
@@ -61,11 +65,10 @@ export default class Navbar1 extends React.Component {
     }
 
     LogInNav = () => {
-        const isLoggedIn = this.state.isLoggedIn
         return(
-        isLoggedIn ? (
+        this.props.isAuthenticated ? (
          <NavItem>
-            <NavLink href="/logout" style={this.state.isOpen ? Inline : NavMenu}>Logout</NavLink>
+            <NavLink href="/logout" style={this.state.isOpen ? Inline : NavMenu} onClick={this.props.logOutAction}>Logout</NavLink>
          </NavItem>) :
          (<NavItem >
             <NavLink href="/login" style={this.state.isOpen ? Inline : NavMenu}>Login</NavLink>
@@ -74,14 +77,13 @@ export default class Navbar1 extends React.Component {
     }
 
     SignUpProfile = () => {
-        const isLoggedIn = this.state.isLoggedIn
         return(
-        isLoggedIn ? (
+        this.props.isAuthenticated ? (
          <NavItem >
             <NavLink href="#" style={this.state.isOpen ? Inline : NavMenuLast}>Profile</NavLink>
          </NavItem>) :
          (<NavItem >
-            <NavLink href="signup" style={this.state.isOpen ? Inline : NavMenuLast}>Signup</NavLink>
+            <NavLink href="/signup" style={this.state.isOpen ? Inline : NavMenuLast}>Signup</NavLink>
           </NavItem>)
           )
     }
@@ -121,6 +123,14 @@ export default class Navbar1 extends React.Component {
                     </NavItem>
                   </Nav>
                   <Nav style={this.state.isOpen ? TextCenter : NavMenuPD2} navbar>
+                  {/* {this.props.isAuthenticated ? (
+                     <NavItem>
+                        <NavLink href="/logout" style={this.state.isOpen ? Inline : NavMenu} onClick=           {this.props.logOutAction}>Logout</NavLink>
+                     </NavItem>) :
+                     (<NavItem >
+                        <NavLink href="/login" style={this.state.isOpen ? Inline : NavMenu}>Login</NavLink>
+                      </NavItem>)
+                      } */}
                     {this.LogInNav()}
                     {this.SignUpProfile()}
                   </Nav>
@@ -138,7 +148,7 @@ export default class Navbar1 extends React.Component {
                       <NavLink  href="#" style={this.state.isOpen ? null : NavMenu}>About</NavLink>
                     </NavItem>
                     <NavItem >
-                    <Dropdown isOpen={this.state.isDown2}>
+                    <UncontrolledDropdown isOpen={this.state.isDown2}>
                       <DropdownToggle
                       tag="span"
                       onClick={this.toggleDown2}
@@ -152,17 +162,34 @@ export default class Navbar1 extends React.Component {
                               <DropdownItem style={BorderTop2} divider/>
                               <DropdownItem style={TextStyle}>Search Entrepreneurs</DropdownItem>
                           </DropdownMenu>
-                     </Dropdown>
+                     </UncontrolledDropdown>
                     </NavItem>
                     <NavItem >
-                    <Dropdown isOpen={this.state.isDown}>
+                    <UncontrolledDropdown isOpen={this.state.isDown}>
                       <DropdownToggle
                       tag="span"
-                    //   onClick={this.toggleDown}
+                      onClick={this.toggleDown}
                       data-toggle="dropdown"
                       aria-expanded={this.state.dropdownOpen}
                       >
-                        <NavLink  href="#" onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave} style={this.state.isOpen ? null : NavMenu}>Entrepreneurs</NavLink>
+                        <NavLink  href="#" style={this.state.isOpen ? null : NavMenu}>Entrepreneurs</NavLink>
+                      </DropdownToggle>
+                          <DropdownMenu right>
+                              <DropdownItem style={TextStyle}>Get Started</DropdownItem>
+                              <DropdownItem style={BorderTop2} divider/>
+                              <DropdownItem style={TextStyle}>Search Investors</DropdownItem>
+                          </DropdownMenu>
+                     </UncontrolledDropdown>
+                    </NavItem>
+                    {/* <NavItem >
+                    <Dropdown isOpen={this.state.isDown}>
+                      <DropdownToggle
+                      tag="span"
+                      onClick={this.toggleDown}
+                      data-toggle="dropdown"
+                      aria-expanded={this.state.dropdownOpen}
+                      >
+                        <NavLink  href="#" style={this.state.isOpen ? null : NavMenu}>Entrepreneurs</NavLink>
                       </DropdownToggle>
                           <DropdownMenu right>
                               <DropdownItem style={TextStyle}>Get Started</DropdownItem>
@@ -170,12 +197,21 @@ export default class Navbar1 extends React.Component {
                               <DropdownItem style={TextStyle}>Search Investors</DropdownItem>
                           </DropdownMenu>
                      </Dropdown>
-                    </NavItem>
+                    </NavItem> */}
                     <NavItem >
                         <NavLink  href="#" style={this.state.isOpen ? null : NavMenuLast}>Help</NavLink>
                     </NavItem>
                   </Nav>
                   <Nav style={this.state.isOpen ? null : NavMenuPD2} navbar>
+                  {console.log(this.props.isAuthenticated)}
+                  {/* {this.props.isAuthenticated ? (
+                     <NavItem>
+                        <NavLink href="/logout" style={this.state.isOpen ? Inline : NavMenu} onClick=           {this.props.logOutAction}>Logout</NavLink>
+                     </NavItem>) :
+                     (<NavItem >
+                        <NavLink href="/login" style={this.state.isOpen ? Inline : NavMenu}>Login</NavLink>
+                      </NavItem>)
+                      } */}
                     {this.LogInNav()}
                     {this.SignUpProfile()}
                   </Nav>
@@ -257,3 +293,13 @@ const TextStyle = {
     fontSize: 10,
     padding: 10
 }
+
+export const NavbarTest = withRouter(
+    connect((state)=>({
+        isAuthenticated: state.auth.isAuthenticated
+    })
+    ,
+    (dispatch) => ({
+       logOutAction: ()=> dispatch(logOut())
+    })
+)(Navbar1))

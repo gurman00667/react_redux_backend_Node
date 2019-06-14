@@ -10,6 +10,7 @@ export function summuryReducer(state = initialState, action){
             return{
                 summuryArray: state.summuryArray.concat([action.summury])
             }
+            default:
+            return state;
     }
-    return state;
 }

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Dispatch } from 'redux';
 
 export const ADD_SUMMURY = 'ADD_SUMMURY';
 
