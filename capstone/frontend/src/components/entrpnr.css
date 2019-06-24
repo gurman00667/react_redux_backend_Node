@@ -1,0 +1,22 @@
+.main {
+    background-color: lightgrey;
+}
+.zoom {
+   
+    transition: transform .9s ; /* Animation */
+   
+  }
+  
+  .zoom:hover {
+    transform: scale(1.5); 
+  }
+  .fixedimg {
+      height: 400px ;
+      width: 100%;
+  }
+  h3 {
+      color: white;
+  }
+  .cards{
+      background-color: lightgrey;
+  }

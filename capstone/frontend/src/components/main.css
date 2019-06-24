@@ -1,32 +1,219 @@
 #summary:hover {
-    background-color: bisque;
+    background-color: whitesmoke;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 5s;
+    font-weight: bold;
+    border-color: #A5C9FF;
 }
 #product:hover {
-    background-color: bisque;
+    background-color:whitesmoke;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 3s;
+    font-weight: bold;
+    border-color: #A5C9FF;
 }
 #toinvestor:hover {
-    background-color: bisque;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 3s;
+    font-weight: bold;
+    border-color: #A5C9FF;
 }
+
 #advantage:hover {
-    background-color: bisque;
+    background-color: whitesmoke;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 3s;
+    font-weight: bold;
+    border-color: #A5C9FF;
 }
 #motivation:hover {
-    background-color: bisque;
+    background-color: whitesmoke;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 3s;
+    font-weight: bold;
+    border-color: #A5C9FF;
+}
+#abouts:hover {
+    background-color: whitesmoke;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 3s;
+    font-weight: bold;
+    border-color: #A5C9FF;
 }
 #contact:hover {
-    background-color: bisque;
+    background-color: whitesmoke;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 3s;
 }
 #feature:hover {
-    background-color: bisque;
+    background-color: whitesmoke;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 3s;
+    font-weight: bold;
+    
+   
+    
 }
 #about:hover {
-    background-color: bisque;
+    background-color:whitesmoke;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 3s;
+    font-weight: bold;
+    border-color: #A5C9FF;
+    
 }
 #message:hover {
-    background-color: bisque;
+    background-color:whitesmoke;
+    text-transform: uppercase;
+    animation-name: invest;
+    animation-duration: 3s;
+    font-weight: bold;
+    border-bottom-color: #A5C9FF;
 }
+@keyframes invest {
+    from{background-color: whitesmoke;}
+    to{background-color: darkgray}
+
+    from{}
+}
+
 #sidebars{
     position: -webkit-sticky ;
     position: sticky;
     top: 0%
 }
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    display: block;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    /* margin: 0; */
+    /* padding: 1em; */
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+}
+
+.card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+}
+
+.card-text {
+    clear: both;
+    margin-top: .5em;
+    color: rgba(0, 0, 0, .68);
+}
+
+.card-footer {
+    font-size: 1em;
+    position: static;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: .75em 1em;
+    color: rgba(0, 0, 0, .4);
+    border-top: 1px solid rgba(0, 0, 0, .05) !important;
+    background: #fff;
+}
+
+.card-inverse .btn {
+    border: 1px solid rgba(0, 0, 0, .05);
+}
+
+.profile {
+    position: absolute;
+    top: -12px;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    margin-left: 190px;
+    margin-top: 390px;
+    border: 1px solid darkgray;
+    border-radius: 10%;
+}
+
+.profile-avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+}
+
+.profile-inline {
+    position: relative;
+    top: 0;
+    display: inline-block;
+}
+
+.profile-inline ~ .card-title {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: top;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.meta {
+    font-size: 1em;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a:hover {
+    color: rgba(0, 0, 0, .87);
+}
+.zoom {
+  
+  }
+  
+  .zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  
+  .overflow{
+    overflow: hidden;
+  }
+  .line::after{
+    position: absolute;
+    content: "";
+    height: 2px;
+    background-color: whitesmoke;
+    width: 100%;
+    /* margin-left: 75px; */
+    /* top: 50%; */
+    margin-top:10px;
+  }
+

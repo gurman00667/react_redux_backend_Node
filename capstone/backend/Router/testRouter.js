@@ -3,6 +3,7 @@ const express = require('express');
 class TestRouter {
     constructor(service){
         this.service = service;
+            
     }
 
     router(){
@@ -16,8 +17,9 @@ class TestRouter {
 
     get(req, res){
         return this.service.list()
-            .then((results)=>res.json(results))
+            .then((results)=>res.json(results) )
             .catch((err)=>res.status(500).json(err));
+           
     }
 
     post(req, res){

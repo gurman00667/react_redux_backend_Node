@@ -7,10 +7,14 @@ import Login from './components/LogIn';
 import SignUp from './components/SignUp'
 // import InputEntrepneursSummury from './components/InputEntrepneursSummury';
 import PitchViewPage from './components/PitchViewPage';
-
+import Entrepreneurs from './components/Entrepreneurs';
+import InputEntrepneursSummury from './components/InputEntrepneursSummury'
+import Filter from './components/Filter'
 
 //cors test from backend
 import axios from 'axios';
+import Investor from './components/Investor';
+
 
 const getData = () => {
   axios.get(`${process.env.REACT_APP_API_SERVER}/api/test`)
@@ -28,16 +32,22 @@ function App() {
     <Router>
     <div className="App">
      
-      <Navbar1 image = {logo}/>
-      {/* <Login /> */}
-      {/* <SignUp /> */}
-      {/* <br /> */}
-      {/* <PitchViewPage /> */}
-      {/* <InputEntrepneursSummury /> */}
-      
-      <Route exact={true} path="/" component={PitchViewPage} />
+      {/* <Navbar1 image = {logo}/> */}
+      {/*}
+      <Login />
+      <SignUp />
+      <br />
+      <PitchViewPage />
+      <InputEntrepneursSummury /> */}
+      {/* <Entrepreneurs/> */}
+      <Investor/>
+
+      {/* <Filter/> */}
+
+      {/* <Route exact={true} path="/" component={PitchViewPage} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={SignUp} />
+      <Route path="/entrepreneur" component={Entrepreneurs}/> */}
     </div>
     </Router>
   );

@@ -1,4 +1,4 @@
-class Test {
+class Products {
     constructor(knex){
         this.knex = knex;
     }
@@ -6,7 +6,7 @@ class Test {
     //Get all of the item when Query happens
     list(){
         let query = this.knex.select('header', 'highlights', 'body')
-            .from('summury')
+            .from('product')
                 return query.then((rows)=>{
                     console.log(rows)
                     return rows.map(r => ({
@@ -38,7 +38,7 @@ class Test {
                 header: summury.summuryHeader,
                 body: summury.summuryBody
             })
-            .into('summury')
+            .into('product')
             .returning('id')
 
             .catch(err => {
@@ -49,4 +49,4 @@ class Test {
 
 }
 
-module.exports = Test;
+module.exports = Products;

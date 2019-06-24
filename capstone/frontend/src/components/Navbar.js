@@ -162,7 +162,7 @@ export default class Navbar1 extends React.Component {
                       data-toggle="dropdown"
                       aria-expanded={this.state.dropdownOpen}
                       >
-                        <NavLink  href="#" onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave} style={this.state.isOpen ? null : NavMenu}>Entrepreneurs</NavLink>
+                        <NavLink  href="/entrepreneur" onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave} style={this.state.isOpen ? null : NavMenu}>Entrepreneurs</NavLink>
                       </DropdownToggle>
                           <DropdownMenu right>
                               <DropdownItem style={TextStyle}>Get Started</DropdownItem>

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-import { AddSummuryActionThunk } from '../redux/summury/actions'
+import { AddSummuryActionThunk } from '../redux/Actions/summaryaction'
 
 export class InputEntrepneursSummury extends React.Component {
     constructor(props){
