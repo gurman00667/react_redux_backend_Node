@@ -1,9 +1,27 @@
 import React from 'react';
 import './LogIn.css'
+import {connect} from 'react-redux'
+import { loginUser } from '../redux/auth/actions';
 
-export default class Login extends React.Component {
+export class Login extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            email: '',
+            password: ''
+        }
+    }
+
+    onChangeField = (field, e) => {
+        const state = {};
+        state[field] = e.currentTarget.value;
+        this.setState(state);
+    }
+    
+    login = (e) => {
+        e.preventDefault()
+        this.props.login(this.state.email, this.state.password)
+        this.props.history.push("/")
     }
 
     render(){
@@ -20,7 +38,7 @@ export default class Login extends React.Component {
               <div className="input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text"><i className="fa fa-user " /></span>
-                  <input type="text" className="form-control" name="username" placeholder="Username" required="required" />
+                  <input type="text" className="form-control" name="email" placeholder="Email" required="required" onChange={this.onChangeField.bind(this, 'email') } value={this.state.email}/>
                 </div>
               </div>
             </div>
@@ -28,15 +46,15 @@ export default class Login extends React.Component {
               <div className="input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text"><i className="fa fa-lock" /></span>
-                  <input type="password" className="form-control" name="password" placeholder="Password" required="required" />
+                  <input type="password" className="form-control" name="password" placeholder="Password" required="required" onChange={this.onChangeField.bind(this, 'password')} value={this.state.password}/>
                 </div>
               </div>
             </div>        
-            <div className="form-group">
-              <button type="submit" className="btn btn-success btn-block login-btn">Sign in</button>
-            </div>
             <div className="clearfix">
               <label className="pull-left checkbox-inline"><input type="checkbox" /> Remember me</label>
+            </div>
+            <div className="form-group">
+              <button type="submit" className="btn btn-success btn-block login-btn" onClick={this.login}>Sign in</button>
             </div>
             <div className="text-center">
             <a href="#" className="pull-right text-success ">Forgot Password?</a>
@@ -60,3 +78,20 @@ export default class Login extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        email: state.email,
+        password: state.password
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        login: (email, password) => {
+            dispatch(loginUser(email, password))
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Login)

@@ -8,6 +8,7 @@ class Products {
         let query = this.knex.select('header', 'highlights', 'body')
             .from('product')
                 return query.then((rows)=>{
+                    // return rows
                     console.log(rows)
                     return rows.map(r => ({
                         header: r.header,
@@ -33,6 +34,7 @@ class Products {
     // }
 
     async add(summury){
+        console.log(summury, "lll")
         let query2 = await this.knex
             .insert({
                 header: summury.summuryHeader,

@@ -1,9 +1,10 @@
 const express = require('express');
+const authClass = require('../auth')
+const auth = authClass();
 
-class TestRouter {
+class AuthRouter {
     constructor(service){
         this.service = service;
-            
     }
 
     router(){
@@ -17,18 +18,16 @@ class TestRouter {
 
     get(req, res){
         return this.service.list()
-            .then((results)=>res.json(results) )
+            .then((results)=>res.json(results))
             .catch((err)=>res.status(500).json(err));
-           
     }
 
     post(req, res){
-        return this.service.add(req.body)
-            .then(()=> this.service.list())
-            .then((results)=> res.json(results))
+        return this.service.login(req.body.email, req.body.password)
+            .then((token)=> res.json(token))
             .catch((err)=> res.status(500).json(err))
     }
 
 }
 
-module.exports = TestRouter;
+module.exports = AuthRouter;
